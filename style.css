@@ -1,6 +1,7 @@
 :root {
   /* put variables in here */
   --clr-background: light-dark(#fdedf9, #120111);
+  --clr-primary: #800080;
 
   --max-width: 1400px;
 }
@@ -70,8 +71,8 @@ main {
 article {
   max-inline-size: 100%;
   block-size: fit-content;
-  border: 4px rebeccapurple solid;
-  background: #6c3ec961;
+  border: 4px oklch(from var(--clr-primary) 0.35 c h) solid;
+  background-color: oklch(from var(--clr-primary) .2 c calc(h - 20));
   border-radius: 20px;
   padding: 10px 20px;
   text-align: justify;
