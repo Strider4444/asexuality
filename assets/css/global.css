@@ -54,6 +54,10 @@ h3 {
   font-family: 'Times New Roman', Times, serif;
 }
 
+.strong, a{
+  color: var(--clr-titles);
+}
+
 main {
   flex: 1;
 
