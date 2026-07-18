@@ -1,0 +1,84 @@
+:root {
+  /* put variables in here */
+  --num-sm: 8px;
+  --num-md: 16px;
+  --num-lg: 32px;
+  --num-xlg: 64px;
+
+  --primary-mod: light-dark(0.8, 1.2);
+  --secondary-mod: light-dark(0.95, 1.05);
+  --clr-background: light-dark(#f0f0f0, #0f0f0f);
+  --clr-primary: light-dark(rgb(190 190 190), rgb(38 38 38));
+  --clr-secondary: light-dark(rgb(170 170 170), rgb(65 65 65));
+  --clr-accent: light-dark(#aa00aa, #5d005d);
+  --clr-titles: light-dark(#000, #fff);
+  --clr-text: light-dark(rgb(0 0 0 / 0.8), rgb(255 255 255 / 0.8));
+
+  --max-width: 1400px;
+
+  --transition-time: 0.15s;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  block-size: 100%;
+  color-scheme: light dark;
+}
+
+html,
+body {
+  max-inline-size: 100vw;
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100%;
+  color: var(--clr-text);
+  background-color: var(--clr-background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  container: body / inline-size;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+a {
+  color: var(--clr-titles);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-item {
+  min-inline-size: 75px;
+  text-align: center;
+  cursor: pointer;
+  padding: var(--num-md);
+  color: var(--clr-text);
+  text-decoration: none;
+  transition: background-color var(--transition-time) ease-in-out;
+
+  &:hover,
+  &:focus-visible,
+  &[data-active]:hover,
+  &[data-active]:focus-visible {
+    background-color: var(--clr-secondary);
+  }
+
+  &[data-active] {
+    background-color: var(--clr-primary);
+  }
+}

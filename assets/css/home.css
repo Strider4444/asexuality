@@ -1,0 +1,23 @@
+.home-header{
+  display: grid;
+  gap: var(--num-lg);
+}
+
+.home-header-title{
+  text-align: center;
+
+  & > h1 {
+    font-size: clamp(2.5em, 3vw + 1em, 3.75em);
+    padding: 0;
+  }
+
+  & > p{
+    font-size: clamp(1em, 1vw + .5em, 1.25em);
+  }
+}
+
+.home-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--num-lg);
+}
