@@ -10,7 +10,7 @@
   --clr-secondary: light-dark(rgb(170 170 170), rgb(65 65 65));
   --clr-accent: light-dark(#aa00aa, #5d005d);
   --clr-titles: light-dark(#000, #fff);
-  --clr-text: light-dark(rgb(0 0 0 / 0.75),  rgb(255 255 255 / 0.7));
+  --clr-text: light-dark(rgb(0 0 0 / 0.75), rgb(255 255 255 / 0.7));
 
   --max-width: 1400px;
 
@@ -31,7 +31,7 @@ html,
 body {
   max-inline-size: 100vw;
   overflow-x: hidden;
-  font-size: 18px;
+  font-size: clamp(16px, 1.75vw, 18px);
   line-height: 1.5;
 }
 
@@ -49,26 +49,46 @@ body {
 
 h1,
 h2,
-h3{
+h3 {
   color: var(--clr-titles);
   font-family: 'Times New Roman', Times, serif;
 }
 
-section {
-  display: grid;
-  padding-block: calc(var(--num-xlg) * 2);
+main {
+  flex: 1;
 
-  &[data-bg]{
-    background-color: var(--clr-primary);
-  }
+  --breakout-max-width: 1500px;
+
+  --breakout-size: calc((var(--breakout-max-width) - var(--max-width)) / 2);
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--num-sm), 1fr)
+    [breakout-start] minmax(0, var(--breakout-size))
+    [content-start] min(100% - (var(--num-sm) * 2), var(--max-width))
+    [content-end]
+    minmax(0, var(--breakout-size)) [breakout-end]
+    minmax(var(--num-sm), 1fr) [full-width-end];
 }
 
+section {
+  display: grid;
+  grid-template-columns: inherit;
+  grid-column: full-width;
 
-.margins{
-  max-inline-size: var(--max-width);
-  inline-size: 100%;
-  margin-inline: auto;
-  flex: 1;
+  padding-block: calc(var(--num-xlg));
+
+  &[data-bg] {
+    background-color: var(--clr-primary);
+
+    display: grid;
+    grid-template-columns: inherit;
+    grid-column: full-width;
+  }
+
+  & > div {
+    grid-column: content;
+  }
 }
 
 .navbar {
@@ -78,9 +98,11 @@ section {
 
 .navbar-item {
   min-inline-size: 75px;
-  text-align: center;
+  block-size: 50px;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  padding: var(--num-md);
+  padding-inline: clamp(var(--num-sm), .5vw,var(--num-md));
   color: var(--clr-text);
   text-decoration: none;
   transition: background-color var(--transition-time) ease-in-out;
