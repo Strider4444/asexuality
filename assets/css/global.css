@@ -45,7 +45,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   container: body / inline-size;
-  line-height: 1.5;
 }
 
 h1,
