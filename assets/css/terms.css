@@ -1,0 +1,22 @@
+.terms {
+  --repeat: 3;
+
+  display: grid;
+  gap: var(--num-lg);
+  grid-template-columns: repeat(var(--repeat, auto-fit), minmax(300px, 1fr));
+  padding-block: var(--num-xlg);
+
+  @container (inline-size < calc((325px * 3))){
+    --repeat: auto-fit;
+    gap: var(--num-md);
+  }
+}
+
+.term-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--num-md);
+  background-color: var(--clr-primary);
+  padding: var(--num-sm) var(--num-md);
+  border-radius: var(--num-md);
+}
