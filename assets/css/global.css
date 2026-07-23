@@ -144,5 +144,7 @@ details {
   & > div {
     padding: var(--num-md);
     border: 1px solid var(--clr-primary);
+    display: grid;
+    gap: var(--num-sm)
   }
 }
