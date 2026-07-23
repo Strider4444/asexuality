@@ -38,14 +38,14 @@
   flex-direction: column;
   gap: var(--num-md);
   min-inline-size: 350px;
-  background-color: var(--clr-secondary);
+  background-color: var(--clr-accent);
   padding: var(--num-md);
   border-radius: var(--num-md);
   flex: 1;
-  filter: drop-shadow(3px 3px 5px rgb(0 0 0 / 0.5));
-  
-  @container body (inline-size < 1000px){
-    filter: drop-shadow(0 3px 5px rgb(0 0 0 / 0.5));
+  box-shadow: var(--shadow);
+
+  @container body (inline-size < 1000px) {
+    box-shadow: var(--shadow-alt)
   }
 }
 

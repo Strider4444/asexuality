@@ -8,9 +8,12 @@
   --clr-background: light-dark(#f0f0f0, #0f0f0f);
   --clr-primary: light-dark(rgb(190 190 190), rgb(38 38 38));
   --clr-secondary: light-dark(rgb(170 170 170), rgb(65 65 65));
-  --clr-accent: light-dark(#aa00aa, #5d005d);
+  --clr-accent: light-dark(#aa00aa, #200e32);
   --clr-titles: light-dark(#000, #fff);
   --clr-text: light-dark(rgb(0 0 0 / 0.75), rgb(255 255 255 / 0.7));
+
+  --shadow: 3px 3px 5px rgb(0 0 0 / 0.5), inset 3px 3px 5px rgb(255 255 255 / 0.1);
+  --shadow-alt: 0 3px 5px rgb(0 0 0 / 0.5), inset 0 3px 5px rgb(255 255 255 / 0.1);
 
   --max-width: 1400px;
 
@@ -54,7 +57,8 @@ h3 {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.strong, a{
+.strong,
+a {
   color: var(--clr-titles);
 }
 
@@ -106,7 +110,7 @@ section {
   display: grid;
   place-items: center;
   cursor: pointer;
-  padding-inline: clamp(var(--num-sm), .5vw,var(--num-md));
+  padding-inline: clamp(var(--num-sm), 0.5vw, var(--num-md));
   color: var(--clr-text);
   text-decoration: none;
   transition: background-color var(--transition-time) ease-in-out;
@@ -126,13 +130,12 @@ section {
 details {
   inline-size: 100%;
 
-  & > summary{
+  & > summary {
     background-color: var(--clr-primary);
     padding: var(--num-md);
     cursor: pointer;
     border-radius: var(--num-sm);
     color: var(--clr-titles);
-
   }
 
   &[open] {
@@ -145,6 +148,6 @@ details {
     padding: var(--num-md);
     border: 1px solid var(--clr-primary);
     display: grid;
-    gap: var(--num-sm)
+    gap: var(--num-sm);
   }
 }
