@@ -131,6 +131,7 @@ details {
     padding: var(--num-md);
     cursor: pointer;
     border-radius: var(--num-sm);
+    color: var(--clr-titles);
 
   }
 
