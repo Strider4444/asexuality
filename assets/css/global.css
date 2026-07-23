@@ -122,3 +122,26 @@ section {
     background-color: var(--clr-primary);
   }
 }
+
+details {
+  inline-size: 100%;
+
+  & > summary{
+    background-color: var(--clr-primary);
+    padding: var(--num-md);
+    cursor: pointer;
+    border-radius: var(--num-sm);
+
+  }
+
+  &[open] {
+    > summary {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  & > div {
+    padding: var(--num-md);
+    border: 1px solid var(--clr-primary);
+  }
+}
