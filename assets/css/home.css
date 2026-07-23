@@ -53,3 +53,13 @@
   display: grid;
   gap: var(--num-md);
 }
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: var(--num-md);
+
+  > h1 {
+    margin-block: 0 var(--num-xlg);
+  }
+}
