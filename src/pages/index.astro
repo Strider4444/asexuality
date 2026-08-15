@@ -1,7 +1,74 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import aceFlag from "../assets/images/AceFlag.webp";
 ---
 
 <Layout>
-	<h1>Astro</h1>
+  <section>
+    <div class="header">
+      <div class="header-info">
+        <h1>Asexuality</h1>
+        <p>What is it really?</p>
+        <p>
+          Asexuality is an orientation which describes people who experience
+          little to no sexual attraction towards other people. It does not
+          always mean a total lack of attraction, it can also apply to someone
+          only feels limited attraction, or only experiences attraction in
+          certain cases.
+        </p>
+
+        <p>
+          Asexuality is not lack of libido, and it is not the choice to avoid
+          sexual relationships.
+        </p>
+        <p>
+          Asexuality is a spectrum, and everyone will have a different
+          experience and identity within this spectrum!
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<style define:vars={{ flag: `url('${aceFlag.src}')` }}>
+  .header {
+    --background-percent: 50%;
+
+    background:
+      linear-gradient(
+        to right,
+        var(--clr-background) var(--background-percent),
+        oklch(from var(--clr-background) l c h / 0.5)
+      ),
+      var(--flag);
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+  }
+
+  .header-info {
+    inline-size: 50%;
+    display: grid;
+    gap: clamp(var(--num-m), 1em + 1vw, var(--num-l));
+    padding: var(--num-m) 0;
+
+    > h1 {
+      font-size: 3em;
+      color: var(--clr-text-accent);
+    }
+
+    > p:nth-of-type(1) {
+      font-size: 1.5em;
+    }
+  }
+
+  @container (inline-size <= 900px) {
+    .header {
+      --background-percent: 0;
+    }
+
+    .header-info {
+      inline-size: auto;
+    }
+  }
+</style>
