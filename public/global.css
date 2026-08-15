@@ -1,0 +1,94 @@
+:root {
+  /* put variables in here */
+  --num-s: 8px;
+  --num-m: 16px;
+  --num-l: 32px;
+  --num-xl: 64px;
+
+  --clr-background: light-dark(#f0f0f0, #0a0a0a);
+  --clr-primary: light-dark(#eadbeb, #211e21);
+  --clr-secondary: light-dark(#c77dff, #3c3c3c);
+  --clr-accent: light-dark(#aa00aa, #200e32);
+
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  color: light-dark(rgb(0 0 0 / 0.75), rgb(255 255 255 / 0.7));
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition-duration: 0.15s;
+  }
+}
+
+html,
+body {
+  color-scheme: light dark;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui;
+  font-size: clamp(14px, 0.5em + 1vw, 16px);
+  line-height: 1.5;
+  background-color: var(--clr-background);
+  container: body / inline-size;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3 {
+  color: light-dark(#000, #fff);
+  font-family: "Courier New";
+}
+
+a {
+  color: light-dark(#000, #fff);
+}
+
+article,
+section > div {
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--num-s), 1fr)
+    [content-start] min(100% - (var(--num-s) * 2), var(--inline-size))
+    [content-end]
+    minmax(var(--num-s), 1fr) [full-width-end];
+
+  > * {
+    grid-column: content;
+  }
+}
+
+button {
+  color: light-dark(#000, #fff);
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+details[open]::details-content {
+  padding: var(--num-m);
+  display: grid;
+  gap: var(--num-m);
+}
+
+summary {
+  background-color: var(--clr-secondary);
+  padding: var(--num-s) var(--num-m);
+  cursor: pointer;
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: var(--num-s);
+}

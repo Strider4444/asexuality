@@ -1,0 +1,106 @@
+---
+const links = [
+  {
+    href: "/",
+    name: "Home",
+  },
+  {
+    href: "/terms",
+    name: "Terms",
+  },
+  {
+    href: "/myths",
+    name: "Myths",
+  },
+  {
+    href: "/resources",
+    name: "Resources",
+  },
+];
+---
+
+<nav>
+  {
+    links.map((link) => (
+      <a href={link.href} class="nav-item">
+        {link.name}
+      </a>
+    ))
+  }
+  <button class="nav-item mobile-toggle" popovertarget="mobileLinks">#</button>
+  <div class="mobile-links" id="mobileLinks" popover="auto">
+    {
+      links.map((link) => (
+        <a href={link.href} class="m-nav-item">
+          {link.name}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    min-block-size: 50px;
+    justify-content: center;
+    padding-inline: var(--num-m);
+    background-color: var(--clr-background);
+    anchor-name: --nav-anchor;
+  }
+
+  .nav-item,
+  .m-nav-item {
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+    padding-inline: var(--num-m);
+
+    &:hover {
+      background-color: var(--clr-primary);
+    }
+  }
+
+  .active {
+    background: linear-gradient(to top, transparent, var(--clr-accent));
+  }
+
+  .mobile-toggle {
+    display: none;
+  }
+
+  .mobile-links {
+    position-anchor: --nav-anchor;
+    position-area: end span-all;
+    inline-size: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--clr-accent);
+    background-color: var(--clr-background);
+  }
+
+  .m-nav-item {
+    padding: var(--num-m) var(--num-l);
+    place-items: center end;
+  }
+
+  @container (inline-size <= 625px) {
+    nav {
+      justify-content: end;
+    }
+
+    .nav-item {
+      display: none;
+    }
+
+    .mobile-toggle {
+      display: grid;
+      font-size: 2em;
+    }
+  }
+</style>
+
+<script>
+  const path = window.location.pathname;
+  const page = document.querySelector(`a[href='${path}']`) as HTMLElement;
+  page.classList.add("active");
+</script>
