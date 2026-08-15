@@ -10,7 +10,7 @@
   --clr-secondary: light-dark(#c77dff, #3c3c3c);
   --clr-accent: light-dark(#aa00aa, #200e32);
 
-  --max-width: 1200px;
+  --inline-size: 1200px;
 }
 
 * {
