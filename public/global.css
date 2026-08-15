@@ -9,6 +9,7 @@
   --clr-primary: light-dark(#eadbeb, #211e21);
   --clr-secondary: light-dark(#c77dff, #3c3c3c);
   --clr-accent: light-dark(#aa00aa, #200e32);
+  --clr-text-accent: light-dark(#ad61e9, #9f64f8);
 
   --inline-size: 1200px;
 }
