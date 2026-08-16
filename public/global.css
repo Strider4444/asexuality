@@ -52,7 +52,8 @@ h3 {
   font-family: "Palatino";
 }
 
-a {
+a,
+b {
   color: light-dark(#000, #fff);
 }
 
