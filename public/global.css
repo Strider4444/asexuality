@@ -104,7 +104,7 @@ summary {
   padding: var(--num-s) var(--num-m);
   cursor: pointer;
   font-family: Palatino;
-  font-weight: bold;
   font-size: 1.3em;
+  color: var(--clr-titles);
   border-radius: var(--num-s);
 }
