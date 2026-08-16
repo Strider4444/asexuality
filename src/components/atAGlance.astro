@@ -4,9 +4,7 @@ import LinkButton from "./linkButton.astro";
 
 <section>
   <div>
-    <h2 style="text-align: center; margin-bottom: var(--num-l);">
-      At a glance
-    </h2>
+    <h2>At a glance</h2>
     <div class="cards">
       <div class="card">
         <h3>Split Attraction Model</h3>
@@ -20,22 +18,27 @@ import LinkButton from "./linkButton.astro";
       <div class="card">
         <h3>Attraction Types</h3>
         <p>
-          <b>Romantic</b>: THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER
+          <b>Romantic</b>: THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A
+          PLACEHOLDER
         </p>
         <p>
-          <b>Sexual</b>: THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER
+          <b>Sexual</b>: THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A
+          PLACEHOLDER
         </p>
         <p>
-          <b>Platonic</b>:THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER
+          <b>Platonic</b>:THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A
+          PLACEHOLDER
         </p>
       </div>
       <div class="card">
         <h3>Desire vs Attraction</h3>
         <p>
-          <b>Attraction</b>: THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER
+          <b>Attraction</b>: THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS
+          A PLACEHOLDER
         </p>
         <p>
-          <b>Desire</b>: THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER
+          <b>Desire</b>: THIS IS A PLACEHOLDER THIS IS A PLACEHOLDER THIS IS A
+          PLACEHOLDER
         </p>
       </div>
     </div>
@@ -47,6 +50,12 @@ import LinkButton from "./linkButton.astro";
 </section>
 
 <style>
+  h2 {
+    text-align: center;
+    margin-bottom: var(--num-l);
+    font-size: clamp(1.75em, 1em + 1vw, 2em);
+  }
+
   section {
     background-color: var(--clr-primary);
     padding-block: var(--num-l);
@@ -72,6 +81,10 @@ import LinkButton from "./linkButton.astro";
     padding: var(--num-m);
     border-radius: var(--num-s);
     box-shadow: 3px 3px 5px rgb(0 0 0 / 0.5);
+
+    > h3 {
+      font-size: 1.5em;
+    }
   }
 
   .more {
