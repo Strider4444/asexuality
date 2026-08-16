@@ -58,8 +58,15 @@ import LinkButton from "./linkButton.astro";
   }
 
   .cards {
-    display: flex;
-    gap: var(--num-l);
+    --columns: calc((100% - var(--num-l) * 3) / 3);
+
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(max(350px, var(--columns)), 1fr)
+    );
+    column-gap: var(--num-l);
+    row-gap: var(--num-m);
   }
 
   .card {
@@ -70,7 +77,6 @@ import LinkButton from "./linkButton.astro";
     padding: var(--num-m);
     border-radius: var(--num-s);
     box-shadow: 3px 3px 5px rgb(0 0 0 / 0.5);
-    inline-size: 100%;
   }
 
   .more {
