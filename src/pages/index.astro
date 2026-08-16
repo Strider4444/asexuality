@@ -2,10 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import AtAGlance from "../components/atAGlance.astro";
 import aceFlag from "../assets/images/AceFlag.webp";
+import Faq from "../components/faq.astro";
 ---
 
 <Layout>
-  <section>
+  <section style="padding: 0;">
     <div class="header">
       <div class="header-info">
         <h1>Asexuality</h1>
@@ -30,6 +31,7 @@ import aceFlag from "../assets/images/AceFlag.webp";
     </div>
   </section>
   <AtAGlance />
+  <Faq />
 </Layout>
 
 <style define:vars={{ flag: `url('${aceFlag.src}')` }}>
@@ -52,7 +54,7 @@ import aceFlag from "../assets/images/AceFlag.webp";
     inline-size: 50%;
     display: grid;
     gap: clamp(var(--num-m), 1em + 1vw, var(--num-l));
-    padding: var(--num-l) 0;
+    padding: var(--num-xl) 0;
 
     > h1 {
       font-size: 3em;
