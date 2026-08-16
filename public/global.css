@@ -9,7 +9,9 @@
   --clr-primary: light-dark(#eadbeb, #211e21);
   --clr-secondary: light-dark(#c77dff, #3c3c3c);
   --clr-accent: light-dark(#aa00aa, #490249);
+  --clr-text: light-dark(rgb(0 0 0 / 0.75), rgb(255 255 255 / 0.8));
   --clr-text-accent: light-dark(#ad61e9, #9f64f8);
+  --clr-titles: light-dark(#000, #fff);
 
   --inline-size: 1200px;
 }
@@ -17,7 +19,7 @@
 * {
   padding: 0;
   margin: 0;
-  color: light-dark(rgb(0 0 0 / 0.75), rgb(255 255 255 / 0.8));
+  color: var(--clr-text);
 
   @media (prefers-reduced-motion: no-preference) {
     transition-duration: 0.15s;
@@ -48,13 +50,13 @@ main {
 h1,
 h2,
 h3 {
-  color: light-dark(#000, #fff);
+  color: var(--clr-titles);
   font-family: Palatino;
 }
 
 a,
 b {
-  color: light-dark(#000, #fff);
+  color: var(--clr-titles);
 }
 
 article,
@@ -77,7 +79,7 @@ section {
 }
 
 button {
-  color: light-dark(#000, #fff);
+  color: var(--clr-titles);
   border: 0;
   font: inherit;
   cursor: pointer;
