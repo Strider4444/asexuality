@@ -72,6 +72,11 @@ section > div {
   }
 }
 
+section {
+  padding-block: var(--num-xl);
+  background-color: var(--clr-background);
+}
+
 button {
   color: light-dark(#000, #fff);
   border: 0;
