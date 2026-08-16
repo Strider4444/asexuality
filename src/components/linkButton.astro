@@ -12,6 +12,14 @@ const { link } = Astro.props;
     background-color: var(--clr-accent);
     inline-size: fit-content;
     border-radius: var(--num-s);
-    box-shadow: inset 3px 3px 5px rgb(255 255 255 / .2), 3px 3px 5px rgb(0 0 0 / .5);
+    box-shadow:
+      inset 3px 3px 5px rgb(255 255 255 / 0.2),
+      3px 3px 5px rgb(0 0 0 / 0.5);
+
+    &:hover,
+    &:focus-visible {
+      background-color: oklch(from var(--clr-accent) calc(l * 1.15) c h);
+      scale: 103%;
+    }
   }
 </style>
