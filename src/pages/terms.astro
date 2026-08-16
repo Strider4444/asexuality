@@ -1,9 +1,92 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import aceFlag from "../assets/images/AceFlag.webp";
+import { Image } from "astro:assets";
+
+const termCards = [
+  {
+    term: "Placeholder",
+    descripton: [
+      "Placeholder text Placeholder text Placeholder text Placeholder text ",
+    ],
+  },
+  {
+    term: "Placeholder 2",
+    descripton: [
+      "Placeholder text Placeholder text Placeholder text Placeholder text ",
+    ],
+  },
+  {
+    term: "Placeholder 3",
+    descripton: [
+      "Placeholder text Placeholder text Placeholder text Placeholder text ",
+    ],
+  },
+];
+
+const identities = [
+  {
+    identity: "Placeholder",
+    image: aceFlag,
+    description: [
+      "Placeholder text Placeholder text Placeholder text ",
+      "Placeholder text Placeholder text ",
+    ],
+  },
+  {
+    identity: "Placeholder",
+    image: aceFlag,
+    description: [
+      "Placeholder text Placeholder text Placeholder text ",
+      "Placeholder text Placeholder text ",
+    ],
+  },
+];
 ---
 
+<!-- YES IT'S PROBABLY A CONVOLUTED WAY TO DO THE TERMS HERE BUT IT WOULD BE EASIER IN THE LONG RUN IF WE ADD A LOT -->
 <Layout>
   <section>
-    <h1 style="text-align: center;">Terms you should know</h1>
+    <div>
+      <h1 style="text-align: center; margin-bottom: var(--num-l);">
+        Terms you should know
+      </h1>
+      <div class="terms">
+        {
+          termCards.map((term) => (
+            <div class="term-card">
+              <h2>{term.term}</h2>
+              {term.descripton.map((desc) => (
+                <p>{desc}</p>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </section>
 </Layout>
+
+<style>
+  .terms {
+    --columns: calc((100% - var(--num-l) * 3) / 3);
+
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(max(350px, var(--columns)), 1fr)
+    );
+    column-gap: var(--num-l);
+    row-gap: var(--num-m);
+  }
+
+  .term-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--num-m);
+    background-color: var(--clr-primary);
+    border-radius: var(--num-s);
+    padding: var(--num-m);
+    inline-size: auto;
+  }
+</style>
