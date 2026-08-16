@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import AtAGlance from "../components/atAGlance.astro";
 import aceFlag from "../assets/images/AceFlag.webp";
 ---
 
@@ -8,7 +9,7 @@ import aceFlag from "../assets/images/AceFlag.webp";
     <div class="header">
       <div class="header-info">
         <h1>Asexuality</h1>
-        <p>What is it really?</p>
+        <h2>What is it really?</h2>
         <p>
           Asexuality is an orientation which describes people who experience
           little to no sexual attraction towards other people. It does not
@@ -28,6 +29,7 @@ import aceFlag from "../assets/images/AceFlag.webp";
       </div>
     </div>
   </section>
+  <AtAGlance />
 </Layout>
 
 <style define:vars={{ flag: `url('${aceFlag.src}')` }}>
@@ -57,8 +59,8 @@ import aceFlag from "../assets/images/AceFlag.webp";
       color: var(--clr-text-accent);
     }
 
-    > p:nth-of-type(1) {
-      font-size: 1.5em;
+    > h2 {
+      font-size: 1.75em;
     }
   }
 
