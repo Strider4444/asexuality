@@ -1,3 +1,7 @@
+---
+import LinkButton from "./linkButton.astro";
+---
+
 <section>
   <div>
     <h2 style="text-align: center; margin-bottom: var(--num-l);">
@@ -40,6 +44,10 @@
         </p>
       </div>
     </div>
+    <div class="more">
+      <p>There are many other terms to know about</p>
+      <LinkButton link="/terms">Learn More</LinkButton>
+    </div>
   </div>
 </section>
 
@@ -63,5 +71,13 @@
     border-radius: var(--num-s);
     box-shadow: 3px 3px 5px rgb(0 0 0 / 0.5);
     inline-size: 100%;
+  }
+
+  .more {
+    display: grid;
+    place-items: center;
+    inline-size: 100%;
+    padding-block: var(--num-l);
+    gap: var(--num-m);
   }
 </style>
