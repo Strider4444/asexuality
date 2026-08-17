@@ -84,6 +84,7 @@ button {
   font: inherit;
   cursor: pointer;
   background-color: inherit;
+  user-select: none;
 }
 
 details[open]::details-content {
@@ -107,4 +108,5 @@ summary {
   font-size: 1.3em;
   color: var(--clr-titles);
   border-radius: var(--num-s);
+  user-select: none;
 }
