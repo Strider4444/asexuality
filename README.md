@@ -1,2 +1,9 @@
-# asexuality
-I intend on making a website about asexuality, to make asexuality more accessible and easier to understand.
+Astro v7.2.8
+
+# Usage
+
+install [bun](https://bun.sh/), then run `bun dev` for development server.
+
+## Build
+
+to build the website, use `bun astro build`, then `bun preview` to preview it. It will build to `/dist`.
