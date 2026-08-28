@@ -2,7 +2,7 @@ Astro v7.2.8
 
 # Usage
 
-install [bun](https://bun.sh/), then run `bun dev` for development server.
+install [bun](https://bun.sh/), then run, `bun install` or `bun i` to install dependencies, then `bun dev` for development server.
 
 ## Build
 
