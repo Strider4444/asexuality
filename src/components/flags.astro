@@ -1,56 +1,41 @@
-<section style="padding: 10px;">
-    <div class="tooltip" style="margin-left:2.5%; padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%">
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-    <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-     <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-    <div class="tooltip" style=" padding-right: 2.5%;width: 5%" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQogZKb-T6BI-dJRKvEXik0uD8bapenlK3xYUqQU6wA&s=10" alt="PLACEHOLDER ACE FLAG" width="100%" >
-        <span class="tooltiptext">Tooltip text</span>
-    </div>
-    
-    
+---
+import AceFlag from "@assets/images/AceFlag.webp";
+import AceFlagBlur from "@assets/images/AceFlagBlur.webp";
+
+let flags = [
+  {
+    name: "Asexual Flag",
+    path: AceFlag.src,
+  },
+  {
+    name: "Other Flag",
+    path: AceFlagBlur.src,
+  },
+];
+---
+
+<section class="flags">
+  {flags.map((flag) => (
+    <img
+      src={flag.path}
+      title={flag.name}
+      alt={flag.name}
+      width="64"
+      height="36"
+    />
+  ))}
 </section>
+
+<style>
+  .flags {
+    margin-inline: auto;
+    padding-block: var(--num-m);
+    display: flex;
+    gap: var(--num-s);
+    max-inline-size: var(--inline-size);
+
+    > img {
+      border: 1px solid var(--clr-secondary);
+    }
+  }
+</style>
