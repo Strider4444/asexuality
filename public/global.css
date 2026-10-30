@@ -110,7 +110,3 @@ summary {
   border-radius: var(--num-s);
   user-select: none;
 }
-
-.footer {
-  background-color: var(--clr-primary);
-}
