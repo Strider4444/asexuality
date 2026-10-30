@@ -3,39 +3,44 @@ import AceFlag from "@assets/images/AceFlag.webp";
 import AceFlagBlur from "@assets/images/AceFlagBlur.webp";
 
 let flags = [
-  {
-    name: "Asexual Flag",
-    path: AceFlag.src,
-  },
-  {
-    name: "Other Flag",
-    path: AceFlagBlur.src,
-  },
+    {
+        name: "Asexual Flag",
+        path: AceFlag.src,
+        link: "https://en.wikipedia.org/wiki/Wiki" //placeholder link should link to the lgbtq wiki of the flag
+    },
+    {
+        name: "Other Flag",
+        path: AceFlagBlur.src,
+        link: "https://en.wikipedia.org/wiki/Wiki" //placeholder link should link to the lgbtq wiki of the flag
+    },
 ];
 ---
 
 <section class="flags">
-  {flags.map((flag) => (
-    <img
-      src={flag.path}
-      title={flag.name}
-      alt={flag.name}
-      width="64"
-      height="36"
-    />
-  ))}
+    {flags.map((flag) => (
+            <a href={flag.link} target="_blank">
+                <img
+                        src={flag.path}
+                        title={flag.name}
+                        alt={flag.name}
+                        width="64"
+                        height="36"
+
+                />
+            </a>
+    ))}
 </section>
 
 <style>
-  .flags {
-    margin-inline: auto;
-    padding-block: var(--num-m);
-    display: flex;
-    gap: var(--num-s);
-    max-inline-size: var(--inline-size);
+    .flags {
+        margin-inline: auto;
+        padding-block: var(--num-m);
+        display: flex;
+        gap: var(--num-s);
+        max-inline-size: var(--inline-size);
 
-    > img {
-      border: 1px solid var(--clr-secondary);
+        > img {
+            border: 1px solid var(--clr-secondary);
+        }
     }
-  }
 </style>
