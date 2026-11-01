@@ -1,17 +1,17 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import LinkButton from "@components/linkButton.astro";
 ---
 
 <Layout>
-  <section>
-    <div>
-      <h1>- 404 -</h1>
-      <h2>
-        This Page does not exist<i>; just like my sexual attraction</i>
-      </h2>
-      <p>The Page you are looking for may have been moved to a different place</p>
-    </div>
-  </section>
+    <section>
+        <h1> - 404 - </h1>
+        <h2> This Page does not exist<i>; just like my sexual attraction</i> </h2>
+        <p> The Page you are looking for may have been moved to a different place</p>
+        <div class="button">
+            <LinkButton link="/">Learn More</LinkButton>
+        </div>
+    </section>
 </Layout>
 
 <style>
@@ -19,4 +19,12 @@ import Layout from "@layouts/Layout.astro";
     display: grid;
     place-items: center;
   }
+
+    .button{
+        display: grid;
+        place-items: center;
+        inline-size: 100%;
+        padding-block: var(--num-l);
+        gap: var(--num-m);
+    }
 </style>
