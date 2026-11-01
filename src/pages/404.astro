@@ -1,0 +1,30 @@
+---
+import Layout from "@layouts/Layout.astro";
+import LinkButton from "@components/linkButton.astro";
+---
+
+<Layout>
+  <section>
+    <div>
+      <h1>- 404 -</h1>
+      <h2>
+        This Page does not exist<i>; just like my sexual attraction</i>
+      </h2>
+      <p>
+        The Page you are looking for may have been moved to a different place
+      </p>
+      <LinkButton link="/">Take me Home</LinkButton>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  section > div {
+    display: grid;
+    place-items: center;
+
+    a {
+      margin-top: var(--num-l);
+    }
+  }
+</style>
