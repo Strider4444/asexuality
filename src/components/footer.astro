@@ -3,7 +3,9 @@
   <a href="https://github.com/Strider4444/asexuality/tree/main" target="_blank">
     Want to help develop this site? See our Github Page
   </a>
-  <a href="https://discord.gg/ZkmeUBKqq7" target="_blank">Join our Discord Community</a>
+  <a href="https://discord.gg/ZkmeUBKqq7" target="_blank">
+    Join our Discord Community
+  </a>
   <a href="/contact-us/">Contact us</a>
 </footer>
 
@@ -12,10 +14,19 @@
     background-color: var(--clr-primary);
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
 
-   * {
-    text-decoration: underline;
-    padding: var(--num-m);
+    a {
+      text-decoration: underline;
+      padding: var(--num-m);
+    }
+
+    @media screen and (width < 850px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (width < 450px) {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
