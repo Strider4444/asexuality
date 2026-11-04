@@ -1,32 +1,44 @@
 <footer class="footer">
-  <a href="/about/">About us</a>
-  <a href="https://github.com/Strider4444/asexuality/tree/main" target="_blank">
-    Want to help develop this site? See our Github Page
-  </a>
-  <a href="https://discord.gg/ZkmeUBKqq7" target="_blank">
-    Join our Discord Community
-  </a>
-  <a href="/contact-us/">Contact us</a>
+  <div>
+    <a href="/about/">About us</a>
+    <a
+      href="https://github.com/Strider4444/asexuality/tree/main"
+      target="_blank"
+    >
+      Want to help develop this site? See our Github Page
+    </a>
+    <a href="https://discord.gg/ZkmeUBKqq7" target="_blank">
+      Join our Discord Community
+    </a>
+    <a href="/contact-us/">Contact us</a>
+  </div>
 </footer>
 
 <style>
   .footer {
     background-color: var(--clr-primary);
-    display: flex;
-    justify-content: space-evenly;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      inline-size: min(100%, var(--inline-size));
+      margin-inline: auto;
+
+      /*  TABLET SIZE */
+      @media screen and (width < 900px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      /*  PHONE SIZE  */
+      @media screen and (width < 500px) {
+        grid-template-columns: 1fr;
+      }
+    }
 
     a {
       text-decoration: underline;
       padding: var(--num-m);
-    }
-
-    @media screen and (width < 850px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @media screen and (width < 450px) {
-      grid-template-columns: 1fr;
     }
   }
 </style>
