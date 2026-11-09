@@ -17,144 +17,156 @@ import Caed from "@assets/images/microlabels/caed.png";
 import Requi from "@assets/images/microlabels/requi.png";
 import Demi from "@assets/images/microlabels/demi.png";
 
-
-
-
-
-
-
 let flags = [
-    {
-        name: "Gray Ace",
-        path: GrayAce.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Aceflux",
-        path: Aceflux.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Fraysexuality",
-        path: Freysexual.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Cupiosexuality",
-        path: Cupio.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Caligosexuality",
-        path: Caligo.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Orchidsexuality",
-        path: Orchid.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Quoisexuality",
-        path: Qoi.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Reciprosexuality",
-        path: Recipo.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Lithosexuality",
-        path: Litho.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Placiosexuality",
-        path: Placio.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Accipiosexuality",
-        path: Accipio.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Aegosexuality",
-        path: Aego.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Autosexuality",
-        path: Auto.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Apothisexuality",
-        path: Apothi.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Caedsexuality",
-        path: Caed.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Requissexuality",
-        path: Requi.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    },
-    {
-        name: "Demisexual",
-        path: Demi.src,
-        link: "#" //placeholder link should link to the lgbtq wiki of the flag
-    }
+  {
+    name: "Gray Ace",
+    path: GrayAce.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Aceflux",
+    path: Aceflux.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Fraysexuality",
+    path: Freysexual.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Cupiosexuality",
+    path: Cupio.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  // {
+  //   name: "Caligosexuality",
+  //   path: Caligo.src,
+  //   link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  // },
+  {
+    name: "Orchidsexuality",
+    path: Orchid.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Quoisexuality",
+    path: Qoi.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Reciprosexuality",
+    path: Recipo.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Lithosexuality",
+    path: Litho.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  // {
+  //   name: "Placiosexuality",
+  //   path: Placio.src,
+  //   link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  // },
+  {
+    name: "Accipiosexuality",
+    path: Accipio.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Aegosexuality",
+    path: Aego.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Autosexuality",
+    path: Auto.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Apothisexuality",
+    path: Apothi.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Caedsexuality",
+    path: Caed.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Requissexuality",
+    path: Requi.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Demisexual",
+    path: Demi.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
 ];
 
-function shuffle(array) {
+function shuffle(array: any) {
   let currentIndex = array.length;
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {
-
     // Pick a remaining element...
     let randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 }
 
-shuffle(flags)
+shuffle(flags);
 ---
 
 <section class="flags">
-    {flags.map((flag) => (
-            <a href={flag.link} target="_blank">
-                <img
-                        src={flag.path}
-                        title={flag.name}
-                        alt={flag.name}
-                        width="64"
-                        height="36"
-
-                />
-            </a>
-    ))}
+  {flags.map((flag) => (
+    <a href={flag.link} target="_blank">
+      <img
+        src={flag.path}
+        title={flag.name}
+        alt={flag.name}
+        width="64"
+        height="36"
+      />
+    </a>
+  ))}
 </section>
 
 <style>
-    .flags {
-        margin-inline: auto;
-        padding-block: var(--num-m);
-        display: flex;
-        gap: var(--num-s);
-        max-inline-size: var(--inline-size);
+  .flags {
+    margin-inline: auto;
+    padding-block: var(--num-m);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--num-s);
+    max-inline-size: var(--inline-size);
 
-        > img {
-            border: 1px solid var(--clr-secondary);
-        }
+    > a {
+      border: 1px solid var(--clr-secondary);
     }
+
+    @media screen and (width <= 850px) {
+      padding-inline: var(--num-s);
+    }
+
+    /* nth-of-type(n+x) makes it so only that number - 1 shows up*/
+    @media screen and (width <= 1150px) {
+      > a:nth-of-type(n + 11) {
+        display: none;
+      }
+    }
+
+    @media screen and (width < 720px) {
+      > a:nth-of-type(n + 6) {
+        display: none;
+      }
+    }
+  }
 </style>
