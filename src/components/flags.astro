@@ -107,8 +107,8 @@ let flags = [
 
 function shuffle(array: any) {
   for (let flag in flags) {
-    let testIndex = flags.at(Number(flag));
-    let currentIndex = flags.map((flg) => flg.name).indexOf(testIndex!.name);
+    let currentFlag = flags.at(Number(flag));
+    let currentIndex = flags.map((flg) => flg.name).indexOf(currentFlag!.name);
 
     let randomIndex = Math.floor(Math.random() * currentIndex);
 
