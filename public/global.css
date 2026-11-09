@@ -29,8 +29,8 @@
 html,
 body {
   color-scheme: light dark;
-  inline-size: 100%;
-  block-size: 100%;
+  inline-size: 100dvw;
+  block-size: 100dvh;
 }
 
 body {
