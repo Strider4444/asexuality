@@ -88,16 +88,16 @@ let flags = [
     path: Apothi.src,
     link: "#", //placeholder link should link to the lgbtq wiki of the flag
   },
-  // {
-  //   name: "Caedsexuality",
-  //   path: Caed.src,
-  //   link: "#", //placeholder link should link to the lgbtq wiki of the flag
-  // },
-  // {
-  //   name: "Requissexuality",
-  //   path: Requi.src,
-  //   link: "#", //placeholder link should link to the lgbtq wiki of the flag
-  // },
+  {
+    name: "Caedsexuality",
+    path: Caed.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
+  {
+    name: "Requissexuality",
+    path: Requi.src,
+    link: "#", //placeholder link should link to the lgbtq wiki of the flag
+  },
   {
     name: "Demisexual",
     path: Demi.src,
@@ -117,6 +117,8 @@ function shuffle(array: any) {
       flags[currentIndex],
     ];
   }
+  flags.pop();
+  flags.pop();
 }
 
 shuffle(flags);
