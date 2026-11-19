@@ -1,0 +1,30 @@
+---
+import Layout from "@layouts/Layout.astro";
+import LinkButton from "@components/linkButton.astro";
+---
+
+<Layout>
+  <section>
+    <div>
+      <h1>- 500 -</h1>
+      <h2>
+        Oh no! We are experiencing some problem with our servers<i>; Denmark might be on to us</i>
+      </h2>
+      <p>
+        Please come back later, we are trying to fix the problem asap
+      </p>
+      <LinkButton link="/">Refresh</LinkButton>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  section > div {
+    display: grid;
+    place-items: center;
+
+    a {
+      margin-top: var(--num-l);
+    }
+  }
+</style>
