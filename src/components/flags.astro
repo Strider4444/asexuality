@@ -17,7 +17,13 @@ import Caed from "@assets/images/microlabels/caed.png";
 import Requi from "@assets/images/microlabels/requi.png";
 import Demi from "@assets/images/microlabels/demi.png";
 
-let flags = [
+type Flag = {
+  name: string;
+  path: string;
+  link: string;
+};
+
+let flags: Flag[] = [
   {
     name: "Gray Ace",
     path: GrayAce.src,
@@ -105,23 +111,17 @@ let flags = [
   },
 ];
 
-function shuffle(array: any) {
-  for (let flag in flags) {
-    let currentFlag = flags.at(Number(flag));
-    let currentIndex = flags.map((flg) => flg.name).indexOf(currentFlag!.name);
-
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-
-    [flags[currentIndex], flags[randomIndex]] = [
-      flags[randomIndex],
-      flags[currentIndex],
-    ];
+function shuffle(array: Flag[]): Flag[] {
+  // Fisher-Yates shuffle (O(n) time)
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
-  flags.pop();
-  flags.pop();
+  // Remove last two elements
+  return array.slice(0, -2);
 }
 
-shuffle(flags);
+flags = shuffle(flags);
 ---
 
 <section class="flags">
@@ -151,7 +151,7 @@ shuffle(flags);
       border: 1px solid var(--clr-secondary);
     }
 
-    @media screen and (width <= 850px) {
+    @media screen and (width <= 1208px) {
       padding-inline: var(--num-s);
     }
 
