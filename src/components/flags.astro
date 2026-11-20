@@ -141,6 +141,10 @@ let flags: Flag[] = [
 
     @media screen and (width <= 1208px) {
       padding-inline: var(--num-s);
+
+      > a:nth-of-type(n + 16) {
+        display: none;
+      }
     }
 
     /* nth-of-type(n+x) makes it so only that number - 1 shows up*/
