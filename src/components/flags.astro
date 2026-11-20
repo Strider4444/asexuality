@@ -110,18 +110,6 @@ let flags: Flag[] = [
     link: "#", //placeholder link should link to the lgbtq wiki of the flag
   },
 ];
-
-function shuffle(array: Flag[]): Flag[] {
-  // Fisher-Yates shuffle (O(n) time)
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  // Remove last two elements
-  return array.slice(0, -2);
-}
-
-flags = shuffle(flags);
 ---
 
 <section class="flags">
@@ -169,3 +157,10 @@ flags = shuffle(flags);
     }
   }
 </style>
+
+<script>
+  var flags = document.querySelector(".flags");
+  for (var i = flags?.children.length!; i >= 0; i--) {
+    flags?.appendChild(flags.children[(Math.random() * i) | 0]);
+  }
+</script>
