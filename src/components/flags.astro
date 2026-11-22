@@ -1,0 +1,170 @@
+---
+import GrayAce from "@assets/images/microlabels/grayAce.png";
+import Aceflux from "@assets/images/microlabels/aceflux.png";
+import Freysexual from "@assets/images/microlabels/freysexual.png";
+import Cupio from "@assets/images/microlabels/cupio.png";
+import Caligo from "@assets/images/microlabels/caligo.png";
+import Orchid from "@assets/images/microlabels/orchid.png";
+import Qoi from "@assets/images/microlabels/qoi.png";
+import Recipo from "@assets/images/microlabels/recipo.png";
+import Litho from "@assets/images/microlabels/litho.png";
+import Placio from "@assets/images/microlabels/placio.png";
+import Accipio from "@assets/images/microlabels/accipio.png";
+import Aego from "@assets/images/microlabels/aego.png";
+import Auto from "@assets/images/microlabels/auto.png";
+import Apothi from "@assets/images/microlabels/apothi.png";
+import Caed from "@assets/images/microlabels/caed.png";
+import Requi from "@assets/images/microlabels/requi.png";
+import Demi from "@assets/images/microlabels/demi.png";
+
+type Flag = {
+  name: string;
+  path: string;
+  link: string;
+};
+
+let flags: Flag[] = [
+  {
+    name: "Gray Ace",
+    path: GrayAce.src,
+    link: "https://lgbtqia.wiki/wiki/Greysexual"
+  },
+  {
+    name: "Aceflux",
+    path: Aceflux.src,
+    link: "https://lgbtqia.wiki/wiki/Aceflux"
+  },
+  {
+    name: "Fraysexuality",
+    path: Freysexual.src,
+    link: "https://lgbtqia.wiki/wiki/Fraysexual"
+  },
+  {
+    name: "Cupiosexuality",
+    path: Cupio.src,
+    link: "https://lgbtqia.wiki/wiki/Cupiosexual"
+  },
+  {
+    name: "Caligosexuality",
+    path: Caligo.src,
+    link: "https://lgbtqia.wiki/wiki/Caligosexual"
+  },
+  {
+    name: "Orchidsexuality",
+    path: Orchid.src,
+    link: "https://lgbtqia.wiki/wiki/Orchidsexual"
+  },
+  {
+    name: "Quoisexuality",
+    path: Qoi.src,
+    link: "https://lgbtqia.wiki/wiki/Quoisexual"
+  },
+  {
+    name: "Reciprosexuality",
+    path: Recipo.src,
+    link: "https://lgbtqia.wiki/wiki/Reciprosexual"
+  },
+  {
+    name: "Lithosexuality",
+    path: Litho.src,
+    link: "https://lgbtqia.wiki/wiki/Lithosexual"
+  },
+  {
+    name: "Placiosexuality",
+    path: Placio.src,
+    link: "https://lgbtqia.wiki/wiki/Placiosexual"
+  },
+  {
+    name: "Accipiosexuality",
+    path: Accipio.src,
+    link: "https://lgbtqia.wiki/wiki/Iamvanosexual"
+  },
+  {
+    name: "Aegosexuality",
+    path: Aego.src,
+    link: "https://lgbtqia.wiki/wiki/Aegosexual"
+  },
+  {
+    name: "Autosexuality",
+    path: Auto.src,
+    link: "https://lgbtqia.wiki/wiki/Autosexual"
+  },
+  {
+    name: "Apothisexuality",
+    path: Apothi.src,
+    link: "https://lgbtqia.wiki/wiki/Apothisexual"
+  },
+  {
+    name: "Caedsexuality",
+    path: Caed.src,
+    link: "https://lgbtqia.wiki/wiki/Caedsexual"
+  },
+  {
+    name: "Requissexuality",
+    path: Requi.src,
+    link: "https://lgbtqia.wiki/wiki/Requiessexual"
+  },
+  {
+    name: "Demisexual",
+    path: Demi.src,
+    link: "https://lgbtqia.wiki/wiki/Demisexual"
+  },
+];
+---
+
+<section class="flags">
+  {flags.map((flag) => (
+    <a href={flag.link} target="_blank">
+      <img
+        src={flag.path}
+        title={flag.name}
+        alt={flag.name}
+        width="64"
+        height="36"
+      />
+    </a>
+  ))}
+</section>
+
+<style>
+  .flags {
+    margin-inline: auto;
+    padding-block: var(--num-m);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--num-s);
+    max-inline-size: var(--inline-size);
+
+    > a {
+      border: 1px solid var(--clr-secondary);
+    }
+
+    @media screen and (width <= 1208px) {
+      padding-inline: var(--num-s);
+
+      > a:nth-of-type(n + 16) {
+        display: none;
+      }
+    }
+
+    /* nth-of-type(n+x) makes it so only that number - 1 shows up*/
+    @media screen and (width <= 1150px) {
+      > a:nth-of-type(n + 11) {
+        display: none;
+      }
+    }
+
+    @media screen and (width < 720px) {
+      > a:nth-of-type(n + 6) {
+        display: none;
+      }
+    }
+  }
+</style>
+
+<script>
+  var flags = document.querySelector(".flags");
+  for (var i = flags?.children.length!; i >= 0; i--) {
+    flags?.appendChild(flags.children[(Math.random() * i) | 0]);
+  }
+</script>
